@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="manifest" href="/manifest.json">
+	<title>PWA</title>
+	<script>
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then(function () {
+        console.log('service worker registered');
+      })
+      .catch(function () {
+        console.warn('service worker failed');
+      });
+  }
+</script>
+	<style type="text/css">
+		*{
+			color: green;
+			font-size: 20px;
+		}
+		body{
+			background-color: black;
+		}
+		input{
+			border: solid 2px green;
+			width: 20%;
+			margin-left: 33.3%;
+		}
+		label{
+			width: 50%;
+			border: solid 2px green;
+			margin-left: 33.3%;
+		}
+		#div1{
+			display: flex;
+			flex-direction: column;
+			height: 200px;
+			justify-content: space-around;
+			border: solid 2px green;
+			width: auto;
+		
+		}
+		#div2{
+			border: solid 2px green;
+			width: auto;
+			text-align: center;
+		}
+		#calcular{
+			width: 20%;
+			margin-left: 40%;
+			color: white;
+			border: 1px solid blue;
+			background-color: black;
+		}
+		#calcular:hover{
+			background-color: blue;
+			color: white;
+		}
+
+
+	</style>
+</head>
+<body>
+	<h1 style=" font-size: 50px" align="center">I M C </h1>
+<div id="div1">
+	
+		<label for="peso">Peso: </label><input type="text" name="peso" maxlength="4">
+		<label for="altura">Altura (cm) : </label><input type="text" name="altura" maxlength="4">
+		<input type="button" id="calcular" value="Calcular IMC">
+	
+</div>
+<div id="div2">
+	<h1>Dados</h1><br>
+	<h2>Altura: </h2>
+	<h2>Peso: </h2>
+	<h2>IMC: </h2>
+</div>
+</body>
+</html>
