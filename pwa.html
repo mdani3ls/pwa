@@ -65,8 +65,8 @@
 	<h1 style=" font-size: 50px" align="center">I M C </h1>
 <div id="div1">
 	
-		<label for="peso">Peso: </label><input type="text" name="peso" maxlength="4">
-		<label for="altura">Altura (cm) : </label><input type="text" name="altura" maxlength="4">
+		<label for="peso">Peso: </label><input type="text" id="peso" maxlength="4">
+		<label for="altura">Altura (cm) : </label><input type="text" id="altura" maxlength="4">
 		<input type="button" id="calcular" value="Calcular IMC" onclick="calcular();">
 	
 </div>
@@ -82,10 +82,13 @@
 	let peso = document.getElementById('infoPeso');
 	let imc = document.getElementById('infoIMC');
 
+	let x=0, y=0, z=0;
+	x = int(document.getElementByName('peso'));
+
 	function calcular(){
-	altura.innerHTML += "daniel";
-	peso.innerHTML += "daniel";
-	imc.innerHTML += "daniel";
+	altura.innerHTML ='Altura: '+x;
+	peso.innerHTML ='Peso: '+x;
+	imc.innerHTML ='IMC: '+x;
 	}
 </script>
 </body>
