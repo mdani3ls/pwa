@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<link rel="manifest" href="/manifest.json">
+	<link rel="manifest" href="/manifest.js">
 	<title>PWA</title>
-	<script>
+<script>
   if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('/sw.js')
-      .then(function () {
-        console.log('service worker registered');
-      })
-      .catch(function () {
-        console.warn('service worker failed');
+    console.log("Will the service worker register?");
+    navigator.serviceWorker.register('service-worker.js')
+      .then(function(reg){
+        console.log("Yes, it did.");
+      }).catch(function(err) {
+        console.log("No it didn't. This happened: ", err)
       });
   }
 </script>
@@ -67,14 +67,26 @@
 	
 		<label for="peso">Peso: </label><input type="text" name="peso" maxlength="4">
 		<label for="altura">Altura (cm) : </label><input type="text" name="altura" maxlength="4">
-		<input type="button" id="calcular" value="Calcular IMC">
+		<input type="button" id="calcular" value="Calcular IMC" onclick="calcular();">
 	
 </div>
 <div id="div2">
 	<h1>Dados</h1><br>
-	<h2>Altura: </h2>
-	<h2>Peso: </h2>
-	<h2>IMC: </h2>
+	<h2 id="infoAltura">Altura: </h2>
+	<h2 id="infoPeso">Peso: </h2>
+	<h2 id="infoIMC">IMC: </h2>
 </div>
+
+<script type="text/javascript">
+	let altura = document.getElementById('infoAltura');
+	let peso = document.getElementById('infoPeso');
+	let imc = document.getElementById('infoIMC');
+
+	function calcular(){
+	altura.innerHTML += "daniel";
+	peso.innerHTML += "daniel";
+	imc.innerHTML += "daniel";
+	}
+</script>
 </body>
 </html>

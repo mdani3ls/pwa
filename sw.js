@@ -6,10 +6,7 @@ self.addEventListener('install', function (event) {
       return cache.addAll([
         '/',
         '/index.html',
-        '/styles.css',
-        '/app.js',
         '/manifest.js',
-        '/vendor.js',
       ]);
     })
   )
