@@ -5,7 +5,7 @@ self.addEventListener('install', function (event) {
     caches.open(CACHE_NAME).then(function (cache) {
       return cache.addAll([
         '/',
-        '/index.html',
+        '/pwa.html',
         '/manifest.js',
       ]);
     })
