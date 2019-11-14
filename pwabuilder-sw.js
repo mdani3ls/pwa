@@ -1,57 +1,102 @@
-// This is the "Offline page" service worker
+// Set a name for the current cache
+var cacheName = 'v1'; 
 
-const CACHE = "pwabuilder-page";
+// Default files to always cache
+var cacheFiles = [
+  './pwa.html',
+]
 
-// TODO: replace the following with the correct offline fallback page i.e.: const offlineFallbackPage = "offline.html";
-const offlineFallbackPage = "ToDo-replace-this-name.html";
 
-// Install stage sets up the offline page in the cache and opens a new cache
-self.addEventListener("install", function (event) {
-  console.log("[PWA Builder] Install Event processing");
+self.addEventListener('install', function(e) {
+    console.log('[ServiceWorker] Installed');
 
-  event.waitUntil(
-    caches.open(CACHE).then(function (cache) {
-      console.log("[PWA Builder] Cached offline page during install");
+    // e.waitUntil Delays the event until the Promise is resolved
+    e.waitUntil(
 
-      if (offlineFallbackPage === "ToDo-replace-this-name.html") {
-        return cache.add(new Response("TODO: Update the value of the offlineFallbackPage constant in the serviceworker."));
-      }
+      // Open the cache
+      caches.open(cacheName).then(function(cache) {
 
-      return cache.add(offlineFallbackPage);
-    })
-  );
+        // Add all the default files to the cache
+      console.log('[ServiceWorker] Caching cacheFiles');
+      return cache.addAll(cacheFiles);
+      })
+  ); // end e.waitUntil
 });
 
-// If any fetch fails, it will show the offline page.
-self.addEventListener("fetch", function (event) {
-  if (event.request.method !== "GET") return;
 
-  event.respondWith(
-    fetch(event.request).catch(function (error) {
-      // The following validates that the request was for a navigation to a new document
-      if (
-        event.request.destination !== "document" ||
-        event.request.mode !== "navigate"
-      ) {
-        return;
-      }
+self.addEventListener('activate', function(e) {
+    console.log('[ServiceWorker] Activated');
 
-      console.error("[PWA Builder] Network request Failed. Serving offline page " + error);
-      return caches.open(CACHE).then(function (cache) {
-        return cache.match(offlineFallbackPage);
-      });
+    e.waitUntil(
+
+      // Get all the cache keys (cacheName)
+    caches.keys().then(function(cacheNames) {
+      return Promise.all(cacheNames.map(function(thisCacheName) {
+
+        // If a cached item is saved under a previous cacheName
+        if (thisCacheName !== cacheName) {
+
+          // Delete that cached file
+          console.log('[ServiceWorker] Removing Cached Files from Cache - ', thisCacheName);
+          return caches.delete(thisCacheName);
+        }
+      }));
     })
-  );
+  ); // end e.waitUntil
+
 });
 
-// This is an event that can be fired from your page to tell the SW to update the offline page
-self.addEventListener("refreshOffline", function () {
-  const offlinePageRequest = new Request(offlineFallbackPage);
 
-  return fetch(offlineFallbackPage).then(function (response) {
-    return caches.open(CACHE).then(function (cache) {
-      console.log("[PWA Builder] Offline page updated from refreshOffline event: " + response.url);
-      return cache.put(offlinePageRequest, response);
-    });
-  });
+self.addEventListener('fetch', function(e) {
+  console.log('[ServiceWorker] Fetch', e.request.url);
+
+  // e.respondWidth Responds to the fetch event
+  e.respondWith(
+
+    // Check in cache for the request being made
+    caches.match(e.request)
+
+
+      .then(function(response) {
+
+        // If the request is in the cache
+        if ( response ) {
+          console.log("[ServiceWorker] Found in Cache", e.request.url, response);
+          // Return the cached version
+          return response;
+        }
+
+        // If the request is NOT in the cache, fetch and cache
+
+        var requestClone = e.request.clone();
+        fetch(requestClone)
+          .then(function(response) {
+
+            if ( !response ) {
+              console.log("[ServiceWorker] No response from fetch ")
+              return response;
+            }
+
+            var responseClone = response.clone();
+
+            //  Open the cache
+            caches.open(cacheName).then(function(cache) {
+
+              // Put the fetched response in the cache
+              cache.put(e.request, responseClone);
+              console.log('[ServiceWorker] New Data Cached', e.request.url);
+
+              // Return the response
+              return response;
+      
+                }); // end caches.open
+
+          })
+          .catch(function(err) {
+            console.log('[ServiceWorker] Error Fetching & Caching New Data', err);
+          });
+
+
+      }) // end caches.match(e.request)
+  ); // end e.respondWith
 });

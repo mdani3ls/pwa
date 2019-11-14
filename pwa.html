@@ -92,16 +92,12 @@ if ("serviceWorker" in navigator) {
 <script type="text/javascript">
 
 
-	let altura = document.getElementById('infoAltura');
-	let peso = document.getElementById('infoPeso');
-	let imc = document.getElementById('infoIMC');
-
-	let x=0;
-	x = int(document.getElementByName('peso'));
+	let altura = document.getElementById('altura').value;
+	let peso = document.getElementById('peso').value;
 
 	function calcular(){
-	altura.innerHTML ='Altura: '+x;
-	peso.innerHTML ='Peso: '+x;
+	altura.innerHTML ='Altura: '+altura;
+	peso.innerHTML ='Peso: '+peso+1;
 	imc.innerHTML ='IMC: '+x;
 	}
 </script>
