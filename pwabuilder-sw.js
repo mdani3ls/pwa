@@ -3,7 +3,9 @@ var cacheName = 'v1';
 
 // Default files to always cache
 var cacheFiles = [
-  './pwa.html',
+  '/pwa.html',
+  '/manifest.js',
+  '/img'
 ]
 
 
