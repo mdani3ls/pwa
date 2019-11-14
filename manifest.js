@@ -7,7 +7,7 @@
   "start_url": "/pwa.html",
   "icons": [
     {
-      "src": "images/imc.png",
+      "src": "img/imc.jpg",
       "sizes": "192x192",
       "type": "image/png"
     }
