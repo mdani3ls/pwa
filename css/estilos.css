@@ -1,0 +1,42 @@
+		*{
+			color: green;
+			font-size: 20px;
+		}
+		body{
+			background-color: black;
+		}
+		input{
+			border: solid 2px green;
+			width: 20%;
+			margin-left: 33.3%;
+		}
+		label{
+			width: 50%;
+			border: solid 2px green;
+			margin-left: 33.3%;
+		}
+		#div1{
+			display: flex;
+			flex-direction: column;
+			height: 200px;
+			justify-content: space-around;
+			border: solid 2px green;
+			width: auto;
+		
+		}
+		#div2{
+			border: solid 2px green;
+			width: auto;
+			text-align: center;
+		}
+		#calcular{
+			width: 20%;
+			margin-left: 40%;
+			color: white;
+			border: 1px solid blue;
+			background-color: black;
+		}
+		#calcular:hover{
+			background-color: blue;
+			color: white;
+		}

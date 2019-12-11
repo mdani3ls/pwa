@@ -1,0 +1,16 @@
+{
+  "name": "IMC",
+  "short_name": "IMC",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#2A3443",
+  "description": "Indice de massa corporal",
+  "theme_color": "#2A3443",
+  "icons": [
+    {
+      "src": "./img/imc.jpg",
+      "sizes": "512x512",
+      "type": "image/jpg"
+    }
+  ]
+}

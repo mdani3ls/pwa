@@ -1,36 +1,20 @@
-var CACHE_NAME = 'static-v1';
-
-self.addEventListener('install', function (event) {
-  event.waitUntil(
-    caches.open(CACHE_NAME).then(function (cache) {
-      return cache.addAll([
-        '/',
-        '/pwa.html',
-        '/manifest.js',
-      ]);
-    })
-  )
+self.addEventListener('install', async event => {
+  console.log('install event')
 });
 
-self.addEventListener('activate', function activator(event) {
-  event.waitUntil(
-    caches.keys().then(function (keys) {
-      return Promise.all(keys
-        .filter(function (key) {
-          return key.indexOf(CACHE_NAME) !== 0;
-        })
-        .map(function (key) {
-          return caches.delete(key);
-        })
-      );
-    })
-  );
+self.addEventListener('fetch', async event => {
+  console.log('fetch event')
 });
 
-self.addEventListener('fetch', function (event) {
-  event.respondWith(
-    caches.match(event.request).then(function (cachedResponse) {
-      return cachedResponse || fetch(event.request);
-    })
-  );
+const cacheName = 'pwa-conf-v1';
+const staticAssets = [
+  './',
+  './index.html',
+  './app.js',
+  './css/estilos.css'
+];
+
+self.addEventListener('install', async event => {
+  const cache = await caches.open(cacheName); (1)
+  await cache.addAll(staticAssets); (2)
 });

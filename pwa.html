@@ -3,84 +3,16 @@
 <head>
 	
 	<title>PWA</title>
-
-	<style type="text/css">
-		*{
-			color: green;
-			font-size: 20px;
-		}
-		body{
-			background-color: black;
-		}
-		input{
-			border: solid 2px green;
-			width: 20%;
-			margin-left: 33.3%;
-		}
-		label{
-			width: 50%;
-			border: solid 2px green;
-			margin-left: 33.3%;
-		}
-		#div1{
-			display: flex;
-			flex-direction: column;
-			height: 200px;
-			justify-content: space-around;
-			border: solid 2px green;
-			width: auto;
-		
-		}
-		#div2{
-			border: solid 2px green;
-			width: auto;
-			text-align: center;
-		}
-		#calcular{
-			width: 20%;
-			margin-left: 40%;
-			color: white;
-			border: 1px solid blue;
-			background-color: black;
-		}
-		#calcular:hover{
-			background-color: blue;
-			color: white;
-		}
-
-
-	</style>
-	<script type="text/javascript">
-		// This is the "Offline page" service worker
-
-// Add this below content to your HTML page, or add the js file to your page at the very top to register service worker
-
-// Check compatibility for the browser we're running this in
-if ("serviceWorker" in navigator) {
-  if (navigator.serviceWorker.controller) {
-    console.log("[PWA Builder] active service worker found, no need to register");
-  } else {
-    // Register the service worker
-    navigator.serviceWorker
-      .register("pwabuilder-sw.js", {
-        scope: "./"
-      })
-      .then(function (reg) {
-        console.log("[PWA Builder] Service worker has been registered for scope: " + reg.scope);
-      });
-  }
-}
-
-	</script>
+	<link rel="stylesheet" type="text/css" href="./css/estilos.css">
+	<link rel="manifest" href="./manifest.json">
 </head>
+
 <body>
 	<h1 style=" font-size: 50px" align="center">I M C </h1>
 <div id="div1">
-	
 		<label for="peso">Peso: </label><input type="text" id="peso" maxlength="4">
 		<label for="altura">Altura (cm) : </label><input type="text" id="altura" maxlength="4">
 		<input type="button" id="calcular" value="Calcular IMC" onclick="calcular();">
-	
 </div>
 <div id="div2">
 	<h1>Dados</h1><br>
@@ -92,15 +24,26 @@ if ("serviceWorker" in navigator) {
 <script type="text/javascript">
 
 
-	let altura = document.getElementById('altura').value;
-	let peso = document.getElementById('peso').value;
+	let altura = document.getElementById("altura").value;
+	let peso = document.getElementById("peso").value;
+	let resultado=0;
+
+
 
 	function calcular(){
-	altura.innerHTML ='Altura: '+altura;
-	peso.innerHTML ='Peso: '+peso+1;
-	imc.innerHTML ='IMC: '+x;
+			altura = parseFloat(altura);
+			peso = parseFloat(peso);
+			resultado = parseFloat((altura*altura)/peso);
+		if(resultado != NaN){
+			document.getElementById('infoAltura').innerHTML = "Altura: "+altura+" centímetros";
+			document.getElementById('infoPeso').innerHTML = "Peso: "+peso;
+			document.getElementById('infoIMC').innerHTML = "IMC: "+resultado;
+		}else{
+			alert(resultado);
+		}
 	}
+
 </script>
-<link rel="manifest" href="/manifest.js">
+
 </body>
 </html>
