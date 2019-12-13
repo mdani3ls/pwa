@@ -4,7 +4,7 @@ const staticCache = "meu-site-2019-12-12";
 // Lista de arquivos que devem ser cacheados
 const files = [
   '/',
-  '/index.html',
+  '/pwa.html',
 ];
 
 // Faz cache dos arquivos ao instalar 
