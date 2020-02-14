@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	
 	<title>PWA</title>
 	<link rel="stylesheet" type="text/css" href="./css/estilos.css">
-	<link rel="manifest" href="./manifest.json">
+	<link rel="manifest" href="/manifest.json">
 </head>
 
 <body>
@@ -15,47 +14,28 @@
 		<input type="button" id="calcular" value="Calcular IMC" onclick="calcular();">
 </div>
 <div id="div2">
-	<h1>Dados</h1><br>
+	<h2>Dados</h2>
 	<h2 id="infoAltura">Altura: </h2>
 	<h2 id="infoPeso">Peso: </h2>
 	<h2 id="infoIMC">IMC: </h2>
+	<input type="button" id="salvar" value="Salvar dados no banco de dados MYSQL" onclick="">
 </div>
 
 <script type="text/javascript">
-// verifica se o navegador suporta service workers
-if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
-      // Registration was successful
-      console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }, function(err) {
-      // registration failed :(
-      console.log('ServiceWorker registration failed: ', err);
-    });
-  });
-}
-
-
-	let altura = document.getElementById("altura").value;
-	let peso = document.getElementById("peso").value;
-	let resultado=0;
-
-
+	var altura, peso, imc = 0;
 
 	function calcular(){
-			altura = parseFloat(altura);
-			peso = parseFloat(peso);
-			resultado = parseFloat((altura*altura)/peso);
-		if(resultado != NaN){
-			document.getElementById('infoAltura').innerHTML = "Altura: "+altura+" centímetros";
-			document.getElementById('infoPeso').innerHTML = "Peso: "+peso;
-			document.getElementById('infoIMC').innerHTML = "IMC: "+resultado;
-		}else{
-			alert(resultado);
-		}
+
+		peso = document.getElementById("peso").value;
+		altura = document.getElementById("altura").value;
+		imc = peso/(altura*altura)*10000;
+		alert("A conta foi efetuada com sucesso! O resultado é"+imc);
+		document.getElementById("infoAltura").innerHTML = "Altura: "+altura;
+		document.getElementById("infoPeso").innerHTML = "Peso: "+peso;
+		document.getElementById("infoIMC").innerHTML = "IMC: "+imc;		
 	}
-
 </script>
-
+<h6>Daniel Silva de Moraes</h6>
+<script src="js/main.js"></script>
 </body>
 </html>
