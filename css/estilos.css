@@ -13,7 +13,7 @@
 		label, h2, h1{
 			width: 50%;
 			margin-left: 25%;
-			border: solid 1px red;
+			/* border: solid 1px red; */
 		}
 		#div1{
 			display: flex;
@@ -37,6 +37,7 @@
 			color: white;
 			border: 1px solid blue;
 			background-color: black;
+			margin: auto;
 		}
 		#calcular:hover{
 			background-color: blue;
