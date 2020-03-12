@@ -3,7 +3,7 @@
 <head>
 	<title>PWA</title>
 	<link rel="stylesheet" type="text/css" href="./css/estilos.css">
-	<link rel="manifest" href="./manifest.json">
+	<link rel="manifest" href="/manifest.json">
 </head>
 
 <body>
@@ -29,8 +29,12 @@
 		peso = document.getElementById("peso").value;
 		altura = document.getElementById("altura").value;
 		imc = peso/(altura*altura)*10000;
-		if(!isNaN(imc)){
-			alert("A conta foi efetuada com sucesso! O resultado é"+imc);
+
+		if(peso<=0 || altura<=0) {
+			alert ("Peso e Altura com dados inválidos ou não foram inseridos valores!");
+		}
+		else if(!isNaN(imc)){
+			alert("A conta foi efetuada com sucesso! O resultado é: "+imc);
 			document.getElementById("infoAltura").innerHTML = "Altura: "+altura;
 			document.getElementById("infoPeso").innerHTML = "Peso: "+peso;
 			document.getElementById("infoIMC").innerHTML = "IMC: "+imc;		
