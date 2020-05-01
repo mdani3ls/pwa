@@ -66,7 +66,13 @@
 <script type="text/javascript">
 	var altura, peso, imc = 0;
 	function msg(){
-		alert("Ainda não implementado essa função.")
+		var nome = prompt("Digite seu nome: ");
+
+		if(nome == ""){
+			alert( "Insira um nome para salvar.");
+		}else{
+			alert("Olá "+nome+", infelizmente a função de salvar no banco de dados não está pronta.")	
+		}
 	}
 	function calcular(){
 
