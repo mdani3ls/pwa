@@ -19,10 +19,12 @@
 		<input type="button" id="calcular" value="Calcular IMC" onclick="calcular();">
 </div>
 <div id="div2">
-	<label >Dados</label>
+	<label style="align-self:center ;">Dados</label>
 	<label id="infoAltura">Altura: </label>
 	<label id="infoPeso">Peso: </label>
 	<label id="infoIMC">IMC: </label>
+	<label id="infoIMCIdealMenor">Para que seu IMC fique com 18.50 seu peso deverá ser:</label>
+	<label id="infoIMCIdealMaior">Para que seu IMC fique com 24.99 seu peso deverá ser:</label>
 	<input type="button" id="salvar" value="Salvar dados no banco de dados MYSQL" onclick="msg();">
 </div>
 <table class="table table-striped table-dark">
@@ -87,12 +89,24 @@
 			document.getElementById("infoAltura").innerHTML = "Altura: "+altura;
 			document.getElementById("infoPeso").innerHTML = "Peso: "+peso;
 			document.getElementById("infoIMC").innerHTML = "IMC: "+(imc.toFixed(2));	
-			alert("A conta foi efetuada com sucesso! O resultado é: "+ parseFloat(imc.toFixed(2)));	
+			document.getElementById("infoIMCIdealMenor").innerHTML= "Para que seu IMC fique com 18.50 seu peso deverá ser: "
+			+imcIdealMenor(altura);
+			document.getElementById("infoIMCIdealMaior").innerHTML= "Para que seu IMC fique com 24.99 seu peso deverá ser: "
+			+imcIdealMaior(altura);;
+			//alert("A conta foi efetuada com sucesso! O resultado é: "+ parseFloat(imc.toFixed(2)));	
 			
 		}else{
 			alert("Houve algum erro no calculo dos resultados! Observe os dados inseridos e tente novamente :( ")
 		}
 		 
+	}
+	function imcIdealMenor(altura){
+		altura = altura/100;
+		return (18.50*(altura*altura)).toFixed(2);
+	}
+	function imcIdealMaior(altura){
+		altura = altura/100;
+		return (24.99*(altura*altura)).toFixed(2);
 	}
 </script>
 
