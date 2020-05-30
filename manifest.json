@@ -1,9 +1,34 @@
 {
-  "name": "PWA",
-  "short_name": "PWA",
-  "lang": "en-US",
-  "start_url": "/pwa.html",
-  "display": "standalone",
-  "background_color": "white",
-  "theme_color": "white"  
+  " name " : " DANIELS " ,
+  " short_name " : " DANIELS " ,
+  " ícones " : [{
+    " src " : " img / hello-icon-128.png " ,
+      " tamanhos " : " 128 x 128 " ,
+      " type " : " image / png "
+    }, {
+      " src " : " img / hello-icon-144.png " ,
+      " tamanhos " : " 144 x 144 " ,
+      " type " : " image / png "
+    }, {
+      " src " : " img / hello-icon-152.png " ,
+      " tamanhos " : " 152 x 152 " ,
+      " type " : " image / png "
+    }, {
+      " src " : " img / hello-icon-192.png " ,
+      " tamanhos " : " 192 x 192 " ,
+      " type " : " image / png "
+    }, {
+      " src " : " img / hello-icon-256.png " ,
+      " tamanhos " : " 256 x 256 " ,
+      " type " : " image / png "
+    }, {
+      " src " : " img / hello-icon-512.png " ,
+      " tamanhos " : " 512 x 512 " ,
+      " type " : " image / png "
+    }],
+  " lang " : " en-US " ,
+  " start_url " : " /pwa.html " ,
+  " display " : " autônomo " ,
+  " background_color " : " branco " ,
+  " theme_color " : " branco "
 }
