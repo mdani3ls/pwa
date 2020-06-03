@@ -3,7 +3,10 @@ var filesToCache = [
   '/',
   '/pwa.html',
   '/css/estilos.css',
-  '/js/main.js'
+  '/js/main.js',
+  '/DIGI.TTF',
+  '/curriculo.html',
+  '/manifest.json'
 ];
 
 /* Start the service worker and cache all of the app's content */

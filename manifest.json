@@ -27,8 +27,8 @@
       " type " : " image / png "
     }],
   " lang " : " en-US " ,
-  " start_url " : " /pwa.html " ,
-  " display " : " autônomo " ,
-  " background_color " : " branco " ,
-  " theme_color " : " branco "
+  " start_url " : " ./pwa.html " ,
+  " display " : " standalone " ,
+  " background_color " : " white " ,
+  " theme_color " : " white "
 }
