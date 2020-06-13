@@ -2,27 +2,27 @@
   " name " : " DANIELS " ,
   " short_name " : " DANIELS " ,
   " ícones " : [{
-    " src " : " img / hello-icon-128.png " ,
+    " src " : " img / imc.png " ,
       " tamanhos " : " 128 x 128 " ,
       " type " : " image / png "
     }, {
-      " src " : " img / hello-icon-144.png " ,
+      " src " : " img / imc.png " ,
       " tamanhos " : " 144 x 144 " ,
       " type " : " image / png "
     }, {
-      " src " : " img / hello-icon-152.png " ,
+      " src " : " img / imc.png " ,
       " tamanhos " : " 152 x 152 " ,
       " type " : " image / png "
     }, {
-      " src " : " img / hello-icon-192.png " ,
+      " src " : " img / imc.png " ,
       " tamanhos " : " 192 x 192 " ,
       " type " : " image / png "
     }, {
-      " src " : " img / hello-icon-256.png " ,
+      " src " : " img / imc.png " ,
       " tamanhos " : " 256 x 256 " ,
       " type " : " image / png "
     }, {
-      " src " : " img / hello-icon-512.png " ,
+      " src " : " img / imc.png " ,
       " tamanhos " : " 512 x 512 " ,
       " type " : " image / png "
     }],
