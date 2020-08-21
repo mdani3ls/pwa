@@ -5,12 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>PWA</title>
 	<link rel="icon" href="favicon.ico" type="image/x-icon" />  
-<link rel="apple-touch-icon" href="img/hello-icon-152.png">   
+<link rel="apple-touch-icon" href="img/imc.jpg">   
 <meta name="theme-color" content="white"/>  
 <meta name="apple-mobile-web-app-capable" content="yes">  
 <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
 <meta name="apple-mobile-web-app-title" content="Hello World"> 
-<meta name="msapplication-TileImage" content="img/hello-icon-144.png">  
+<meta name="msapplication-TileImage" content="img/imc.jpg">  
 <meta name="msapplication-TileColor" content="#FFFFFF">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
 	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -92,16 +92,19 @@
 		imc = peso/(altura*altura)*10000;
 
 		if(peso<=0 || altura<=0) {
+
 			alert ("Peso e Altura com dados inválidos ou não foram inseridos valores!");
 		}
 		else if(!isNaN(imc)){
+		
 			document.getElementById("infoAltura").innerHTML = "Altura: "+altura;
 			document.getElementById("infoPeso").innerHTML = "Peso: "+peso;
-			document.getElementById("infoIMC").innerHTML = "IMC: "+(imc.toFixed(2));	
+			document.getElementById("infoIMC").innerHTML = "IMC: "+(imc.toFixed(2))+"       (Observe a tabela abaixo para comparar seu imc)";	
 			document.getElementById("infoIMCIdealMenor").innerHTML= "Para que seu IMC fique com 18.50 seu peso deverá ser: "
 			+imcIdealMenor(altura);
 			document.getElementById("infoIMCIdealMaior").innerHTML= "Para que seu IMC fique com 24.99 seu peso deverá ser: "
 			+imcIdealMaior(altura);;
+
 			//alert("A conta foi efetuada com sucesso! O resultado é: "+ parseFloat(imc.toFixed(2)));	
 			
 		}else{
