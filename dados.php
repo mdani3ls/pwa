@@ -1,0 +1,43 @@
+<html>
+<body>
+<?php 
+
+$servername = "localhost";
+$username = "root";
+$password = "19w283472ds";
+$dbname = "imc";
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+echo "Connected successfully";
+
+echo "Os dados ainda naõ serão armazanados";
+ $nome = $_POST["nome"];
+ $altura = floatval($_POST["altura"]);
+ $peso = floatval($_POST["peso"]);
+ $imc = floatval($_POST["imc"]);
+
+echo var_dump($nome);echo var_dump($altura);echo var_dump($peso);echo var_dump($imc);
+echo "DADOS <br>Nome: $nome <br>Peso: $peso <br>Altura: $altura<br>IMC: $imc";
+
+$sql = "INSERT INTO imc_usuario (id, nome, altura, peso, imc)
+VALUES (0, $nome, $altura, $peso, $imc)";
+
+if ($conn->query($sql) === TRUE) {
+  echo "New record created successfully";
+} else {
+  echo "Error: " . $sql . "<br>" . $conn->error;
+}
+
+$conn->close();
+
+?>
+<br><a href="index.php">Voltar ao site</a>
+</body>
+</html>
+
+
