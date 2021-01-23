@@ -4,10 +4,10 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "19w283472ds";
+$password = "daniel666";
 $dbname = "imc";
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = mysqli_connect('localhost', 'root', 'daniel666', 'imc');
 
 // Check connection
 if ($conn->connect_error) {
@@ -16,16 +16,15 @@ if ($conn->connect_error) {
 echo "Connected successfully";
 
 echo "Os dados ainda naõ serão armazanados";
- $nome = $_POST["nome"];
+ $nome = $_POST["user"];
  $altura = floatval($_POST["altura"]);
  $peso = floatval($_POST["peso"]);
  $imc = floatval($_POST["imc"]);
 
-echo var_dump($nome);echo var_dump($altura);echo var_dump($peso);echo var_dump($imc);
-echo "DADOS <br>Nome: $nome <br>Peso: $peso <br>Altura: $altura<br>IMC: $imc";
+// echo var_dump($nome);echo var_dump($altura);echo var_dump($peso);echo var_dump($imc);
+// echo "DADOS <br>Nome: $nome <br>Peso: $peso <br>Altura: $altura<br>IMC: $imc";
 
-$sql = "INSERT INTO imc_usuario (id, nome, altura, peso, imc)
-VALUES (0, $nome, $altura, $peso, $imc)";
+$sql = "insert into imc_usuario values (0, '$nome', '$altura', '$peso', '$imc')";
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
@@ -36,7 +35,7 @@ if ($conn->query($sql) === TRUE) {
 $conn->close();
 
 ?>
-<br><a href="index.php">Voltar ao site</a>
+<br><a href="index.html">Voltar ao site</a>
 </body>
 </html>
 
