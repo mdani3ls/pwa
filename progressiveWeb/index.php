@@ -4,22 +4,13 @@
 	<meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>PWA</title>
-<<<<<<< HEAD
 	<link rel="icon" href="favicon.ico" type="image/x-icon" />  
 <link rel="apple-touch-icon" href="img/imc.jpg">   
-=======
-	<link rel="icon" href="fit.ico" type="image/x-icon" />  
-<link rel="apple-touch-icon" href="img/imc.png">   
->>>>>>> b104d229dd066f6e14afcc850aefaab64801bbc9
 <meta name="theme-color" content="white"/>  
 <meta name="apple-mobile-web-app-capable" content="yes">  
 <meta name="apple-mobile-web-app-status-bar-style" content="black"> 
 <meta name="apple-mobile-web-app-title" content="Hello World"> 
-<<<<<<< HEAD
 <meta name="msapplication-TileImage" content="img/imc.jpg">  
-=======
-<meta name="msapplication-TileImage" content="img/imc.png">  
->>>>>>> b104d229dd066f6e14afcc850aefaab64801bbc9
 <meta name="msapplication-TileColor" content="#FFFFFF">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
 	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -33,7 +24,6 @@
 	<a href="./curriculo/curriculo.html" target="_blank" title="Clique aqui para ver curriculo">Daniel Silva de Moraes</a>
 	<h1 style=" font-size:50px" align="center">I M C </h1>
 <div id="div1">
-<<<<<<< HEAD
 		<label for="peso">Peso: </label><input type="text" id="peso" maxlength="4" require>
 		<label for="altura">Altura (cm) : </label><input type="text" id="altura" maxlength="4" require>
 		<input type="button" id="calcular" value="Calcular IMC" onclick="calcular();">
@@ -52,27 +42,15 @@
 	</form>
 =======
 	<label style="align-self:center;" color="red">Dados</label>
-=======
-		<label for="peso">Peso: </label><input type="text" id="peso" maxlength="4">
-		<label for="altura">Altura (cm) : </label><input type="text" id="altura" maxlength="4" >
-		<input type="button" id="calcular" value="Calcular IMC" onclick="calcular();">
-</div>
-<div id="div2">
-	<label id="dados" style="align-self:center;">Dados</label>
->>>>>>> b104d229dd066f6e14afcc850aefaab64801bbc9
 	<label id="infoAltura">Altura: </label>
 	<label id="infoPeso">Peso: </label>
 	<label id="infoIMC">IMC: </label>
 	<label id="infoIMCIdealMenor">Para que seu IMC fique com 18.50 seu peso deverá ser:</label>
 	<label id="infoIMCIdealMaior">Para que seu IMC fique com 24.99 seu peso deverá ser:</label>
 	<input type="button" id="salvar" value="Salvar dados no banco de dados MYSQL" onclick="msg();">
-<<<<<<< HEAD
 >>>>>>> b104d229dd066f6e14afcc850aefaab64801bbc9:progressiveWeb/index.php
 </div>
 
-=======
-</div>
->>>>>>> b104d229dd066f6e14afcc850aefaab64801bbc9
 <table class="table table-striped table-dark">
 	<thead>
 	  <tr>
@@ -113,25 +91,12 @@
   </table>
 <script type="text/javascript">
 	var altura, peso, imc = 0;
-<<<<<<< HEAD
 	
-=======
-	function msg(){
-		var nome = prompt("Digite seu nome: ");
-
-		if(nome == ""){
-			alert( "Insira um nome para salvar.");
-		}else{
-			alert("Olá "+nome+", infelizmente a função de salvar no banco de dados não está pronta.")	
-		}
-	}
->>>>>>> b104d229dd066f6e14afcc850aefaab64801bbc9
 	function calcular(){
 
 		peso = document.getElementById("peso").value;
 		altura = document.getElementById("altura").value;
 		imc = peso/(altura*altura)*10000;
-<<<<<<< HEAD
 		
 		if(peso<=0 || altura<=0) {
 
@@ -148,28 +113,15 @@
 			document.getElementById("infoPeso").innerHTML = "Peso: "+peso;
 			document.getElementById("infoIMC").innerHTML = "IMC: "+(imc.toFixed(2))+"       (Observe a tabela abaixo para comparar seu imc)";	
 >>>>>>> b104d229dd066f6e14afcc850aefaab64801bbc9:progressiveWeb/index.php
-=======
-
-		if(peso<=0 || altura<=0) {
-			alert ("Peso e Altura com dados inválidos ou não foram inseridos valores!");
-		}
-		else if(!isNaN(imc)){
-			document.getElementById("infoAltura").innerHTML = "Altura: "+altura;
-			document.getElementById("infoPeso").innerHTML = "Peso: "+peso;
-			document.getElementById("infoIMC").innerHTML = "IMC: "+(imc.toFixed(2))+"       (Observe a tabela abaixo para comparar seu imc)";	
->>>>>>> b104d229dd066f6e14afcc850aefaab64801bbc9
 			document.getElementById("infoIMCIdealMenor").innerHTML= "Para que seu IMC fique com 18.50 seu peso deverá ser: "
 			+imcIdealMenor(altura);
 			document.getElementById("infoIMCIdealMaior").innerHTML= "Para que seu IMC fique com 24.99 seu peso deverá ser: "
 			+imcIdealMaior(altura);;
-<<<<<<< HEAD
 <<<<<<< HEAD:index.html
 			document.getElementByName("peso").value = peso;
 =======
 
 >>>>>>> b104d229dd066f6e14afcc850aefaab64801bbc9:progressiveWeb/index.php
-=======
->>>>>>> b104d229dd066f6e14afcc850aefaab64801bbc9
 			//alert("A conta foi efetuada com sucesso! O resultado é: "+ parseFloat(imc.toFixed(2)));	
 			
 		}else{
@@ -187,10 +139,6 @@
 	}
 </script>
 
-<<<<<<< HEAD
 <script src="js/main.js"></script>
-=======
-<script src="js/main.js" defer></script>
->>>>>>> b104d229dd066f6e14afcc850aefaab64801bbc9
 </body>
 </html>

@@ -2,32 +2,60 @@
   " name " : " DANIELS " ,
   " short_name " : " DANIELS " ,
   " ícones " : [{
+<<<<<<< HEAD
     " src " : " img / imc.jpg " ,
+=======
+    " src " : " img / imc.png " ,
+>>>>>>> b104d229dd066f6e14afcc850aefaab64801bbc9
       " tamanhos " : " 128 x 128 " ,
       " type " : " image / jpg "
     }, {
+<<<<<<< HEAD
       " src " : " img / hello-icon-144.jpg " ,
+=======
+      " src " : " img / imc.png " ,
+>>>>>>> b104d229dd066f6e14afcc850aefaab64801bbc9
       " tamanhos " : " 144 x 144 " ,
       " type " : " image / jpg "
     }, {
+<<<<<<< HEAD
       " src " : " img / hello-icon-152.jpg " ,
+=======
+      " src " : " img / imc.png " ,
+>>>>>>> b104d229dd066f6e14afcc850aefaab64801bbc9
       " tamanhos " : " 152 x 152 " ,
       " type " : " image / jpg "
     }, {
+<<<<<<< HEAD
       " src " : " img / hello-icon-192.jpg " ,
+=======
+      " src " : " img / imc.png " ,
+>>>>>>> b104d229dd066f6e14afcc850aefaab64801bbc9
       " tamanhos " : " 192 x 192 " ,
       " type " : " image / jpg "
     }, {
+<<<<<<< HEAD
       " src " : " img / hello-icon-256.jpg " ,
+=======
+      " src " : " img / imc.png " ,
+>>>>>>> b104d229dd066f6e14afcc850aefaab64801bbc9
       " tamanhos " : " 256 x 256 " ,
       " type " : " image / jpg "
     }, {
+<<<<<<< HEAD
       " src " : " img / hello-icon-512.jpg " ,
+=======
+      " src " : " img / imc.png " ,
+>>>>>>> b104d229dd066f6e14afcc850aefaab64801bbc9
       " tamanhos " : " 512 x 512 " ,
       " type " : " image / jpg "
     }],
   " lang " : " en-US " ,
+<<<<<<< HEAD
   " start_url " : " /index.html " ,
+=======
+  " start_url " : " ./index.html " ,
+>>>>>>> b104d229dd066f6e14afcc850aefaab64801bbc9
   " display " : " standalone " ,
   " background_color " : " white " ,
   " theme_color " : " white "
