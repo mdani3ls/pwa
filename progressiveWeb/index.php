@@ -24,19 +24,33 @@
 	<a href="./curriculo/curriculo.html" target="_blank" title="Clique aqui para ver curriculo">Daniel Silva de Moraes</a>
 	<h1 style=" font-size:50px" align="center">I M C </h1>
 <div id="div1">
-		<label for="peso">Peso: </label><input type="text" id="peso" maxlength="4">
-		<label for="altura">Altura (cm) : </label><input type="text" id="altura" maxlength="4">
+		<label for="peso">Peso: </label><input type="text" id="peso" maxlength="4" require>
+		<label for="altura">Altura (cm) : </label><input type="text" id="altura" maxlength="4" require>
 		<input type="button" id="calcular" value="Calcular IMC" onclick="calcular();">
 </div>
 <div id="div2">
-	<label style="align-self:center ;">Dados</label>
+<<<<<<< HEAD:index.html
+		<label style="align-self:center ;">Dados</label>
+	<form nome="dadosParaSalvar" action="dados.php" method="POST" >
+		<label  >Altura: </label><input type="number_format" name="altura" id="infoAltura" required readonly>
+		<label  >Peso: </label><input type="number_format" name="peso" id="infoPeso" required readonly>
+		<label  >IMC: </label><input type="number_format" name="imc" id="infoIMC" required readonly>
+		<label  >Nome: </label><input type="text" name="user" id="infoNome" required>
+		<label id="infoIMCIdealMenor">Para que seu IMC fique com 18.50 seu peso deverá ser:</label>
+		<label id="infoIMCIdealMaior">Para que seu IMC fique com 24.99 seu peso deverá ser:</label>
+		<input type="submit" id="salvar" value="Salvar dados no banco de dados MYSQL" >
+	</form>
+=======
+	<label style="align-self:center;" color="red">Dados</label>
 	<label id="infoAltura">Altura: </label>
 	<label id="infoPeso">Peso: </label>
 	<label id="infoIMC">IMC: </label>
 	<label id="infoIMCIdealMenor">Para que seu IMC fique com 18.50 seu peso deverá ser:</label>
 	<label id="infoIMCIdealMaior">Para que seu IMC fique com 24.99 seu peso deverá ser:</label>
 	<input type="button" id="salvar" value="Salvar dados no banco de dados MYSQL" onclick="msg();">
+>>>>>>> b104d229dd066f6e14afcc850aefaab64801bbc9:progressiveWeb/index.php
 </div>
+
 <table class="table table-striped table-dark">
 	<thead>
 	  <tr>
@@ -77,35 +91,37 @@
   </table>
 <script type="text/javascript">
 	var altura, peso, imc = 0;
-	function msg(){
-		var nome = prompt("Digite seu nome: ");
-
-		if(nome == ""){
-			alert( "Insira um nome para salvar.");
-		}else{
-			alert("Olá "+nome+", infelizmente a função de salvar no banco de dados não está pronta.")	
-		}
-	}
+	
 	function calcular(){
 
 		peso = document.getElementById("peso").value;
 		altura = document.getElementById("altura").value;
 		imc = peso/(altura*altura)*10000;
-
+		
 		if(peso<=0 || altura<=0) {
 
 			alert ("Peso e Altura com dados inválidos ou não foram inseridos valores!");
 		}
 		else if(!isNaN(imc)){
 		
+<<<<<<< HEAD:index.html
+			document.getElementById("infoAltura").value = altura;
+			document.getElementById("infoPeso").value = peso;
+			document.getElementById("infoIMC").value =  imc.toFixed(2);	
+=======
 			document.getElementById("infoAltura").innerHTML = "Altura: "+altura;
 			document.getElementById("infoPeso").innerHTML = "Peso: "+peso;
 			document.getElementById("infoIMC").innerHTML = "IMC: "+(imc.toFixed(2))+"       (Observe a tabela abaixo para comparar seu imc)";	
+>>>>>>> b104d229dd066f6e14afcc850aefaab64801bbc9:progressiveWeb/index.php
 			document.getElementById("infoIMCIdealMenor").innerHTML= "Para que seu IMC fique com 18.50 seu peso deverá ser: "
 			+imcIdealMenor(altura);
 			document.getElementById("infoIMCIdealMaior").innerHTML= "Para que seu IMC fique com 24.99 seu peso deverá ser: "
 			+imcIdealMaior(altura);;
+<<<<<<< HEAD:index.html
+			document.getElementByName("peso").value = peso;
+=======
 
+>>>>>>> b104d229dd066f6e14afcc850aefaab64801bbc9:progressiveWeb/index.php
 			//alert("A conta foi efetuada com sucesso! O resultado é: "+ parseFloat(imc.toFixed(2)));	
 			
 		}else{
