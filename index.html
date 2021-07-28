@@ -101,19 +101,7 @@
 
 			alert ("Peso e Altura com dados inválidos ou não foram inseridos valores!");
 		}
-		else if(!isNaN(imc)){
 		
-			document.getElementById("infoAltura").value = altura;
-			document.getElementById("infoPeso").value = peso;
-			document.getElementById("infoIMC").value =  imc.toFixed(2);	
-			document.getElementById("infoAltura").innerHTML = "Altura: "+altura;
-			document.getElementById("infoPeso").innerHTML = "Peso: "+peso;
-			document.getElementById("infoIMC").innerHTML = "IMC: "+(imc.toFixed(2))+"       (Observe a tabela abaixo para comparar seu imc)";	
-
-
-		if(peso<=0 || altura<=0) {
-			alert ("Peso e Altura com dados inválidos ou não foram inseridos valores!");
-		}
 		else if(!isNaN(imc)){
 			document.getElementById("infoAltura").innerHTML = "Altura: "+altura;
 			document.getElementById("infoPeso").innerHTML = "Peso: "+peso;
