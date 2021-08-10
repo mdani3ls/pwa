@@ -3,11 +3,7 @@ window.onload = () => {
 
   if ('serviceWorker' in navigator) {
     navigator.serviceWorker
-<<<<<<< HEAD
-             .register('../sw.js');
-=======
              .register('./sw.js');
->>>>>>> b104d229dd066f6e14afcc850aefaab64801bbc9
   }
 }
 let deferredPrompt;

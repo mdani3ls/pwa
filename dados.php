@@ -4,10 +4,10 @@
 
 $servername = "localhost";
 $username = "root";
-$password = "daniel666";
+$password = "1234";
 $dbname = "imc";
 // Create connection
-$conn = mysqli_connect('localhost', 'root', 'daniel666', 'imc');
+$conn = mysqli_connect('localhost', 'root', '1234', 'imc');
 
 // Check connection
 if ($conn->connect_error) {
@@ -31,7 +31,6 @@ if ($conn->query($sql) === TRUE) {
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
-
 $conn->close();
 
 ?>
