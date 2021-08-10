@@ -21,7 +21,6 @@
 </head>
 
 <body>
-	<button class="add-button" target="_blank">Add to home screen</button>
 	<a href="./curriculo/curriculo.html" target="_blank" title="Clique aqui para ver curriculo">Daniel Silva de Moraes</a>
 	<h1 style=" font-size:50px" align="center">I M C </h1>
 <div id="div1">
@@ -103,19 +102,7 @@
 
 			alert ("Peso e Altura com dados inválidos ou não foram inseridos valores!");
 		}
-		else if(!isNaN(imc)){
 		
-			document.getElementById("infoAltura").value = altura;
-			document.getElementById("infoPeso").value = peso;
-			document.getElementById("infoIMC").value =  imc.toFixed(2);	
-			document.getElementById("infoAltura").innerHTML = "Altura: "+altura;
-			document.getElementById("infoPeso").innerHTML = "Peso: "+peso;
-			document.getElementById("infoIMC").innerHTML = "IMC: "+(imc.toFixed(2))+"       (Observe a tabela abaixo para comparar seu imc)";	
-
-
-		if(peso<=0 || altura<=0) {
-			alert ("Peso e Altura com dados inválidos ou não foram inseridos valores!");
-		}
 		else if(!isNaN(imc)){
 			document.getElementById("infoAltura").innerHTML = "Altura: "+altura;
 			document.getElementById("infoPeso").innerHTML = "Peso: "+peso;
