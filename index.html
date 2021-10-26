@@ -17,7 +17,7 @@
 	integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" type="text/css" href="./css/estilos.css">
 	<meta name="theme-color" content="white"/>
-	<link rel="manifest" href="manifest.json">
+	<link rel="manifest" href="js/manifest.json">
 </head>
 
 <body>
@@ -35,10 +35,13 @@
 		<label  >Altura: </label><input type="number_format" name="altura" id="infoAltura" required readonly>
 		<label  >Peso: </label><input type="number_format" name="peso" id="infoPeso" required readonly>
 		<label  >IMC: </label><input type="number_format" name="imc" id="infoIMC" required >
+		<label style=" color:white">Observe a tabela no fim da página para saber sua situação. </label>		
 		<label  >Nome: </label><input type="text" name="user" id="infoNome" required>
-		<label id="infoIMCIdealMenor">Para que seu IMC fique com 18.50 seu peso deverá ser:</label>
-		<label id="infoIMCIdealMaior">Para que seu IMC fique com 24.99 seu peso deverá ser:</label>
-		<input type="submit" id="salvar" value="Salvar dados no banco de dados MYSQL" onclick="salvar();">
+		<label id="infoIMCIdealMenor">Para que seu IMC fique com 18.50 (menor valor aceitavel) seu peso deverá ser:</label>
+		<label id="infoIMCIdealMaior">Para que seu IMC fique com 24.99 (menor valor aceitavel) seu peso deverá ser:</label>
+		<input type="submit" id="salvar" value="Salvar dados com PHP" onclick="salvar();">
+		<input type="submit" id="salvar" value="Salvar dados com NODE js" onclick="salvar();">
+		<input type="submit" id="salvar" value="Salvar como objeto JAVASCRIPT" onclick="salvarAsObject();">
 <!-- 	</form> -->
 </div>
 </div>
@@ -80,8 +83,11 @@
 	</tr>
 	</tbody>
   </table>
+<p id="jsonData"></p>
 <script type="text/javascript">
+
 	var altura, peso, imc = 0;
+	var lista = []
 	function msg(){
 		var nome = prompt("Digite seu nome: ");
 
@@ -94,6 +100,11 @@
 	}
 	function salvar(){
 		alert("Ainda não está pronto a função de salvar :( ");
+	}
+	function salvarAsObject(){
+		var obj = [{nome: document.getElementById("infoNome").value, altura: altura, peso: peso, imc: imc}]
+		lista.push(obj)
+		alert('Nome: '+obj[0].nome+'\nAltura: '+obj[0].altura+'\nPeso: '+obj[0].peso+'\nIMC:'+obj[0].imc)
 	}
 	function calcular(){
 
@@ -119,12 +130,13 @@
 			alert ("Peso e Altura com dados inválidos ou não foram inseridos valores!");
 		}
 		else if(!isNaN(imc)){
+			document.getElementById("peso").innerHTML = null;
 			document.getElementById("infoAltura").innerHTML = "Altura: "+altura;
 			document.getElementById("infoPeso").innerHTML = "Peso: "+peso;
 			document.getElementById("infoIMC").innerHTML = "IMC: "+(imc.toFixed(2))+"       (Observe a tabela abaixo para comparar seu imc)";	
-			document.getElementById("infoIMCIdealMenor").innerHTML= "Para que seu IMC fique com 18.50 seu peso deverá ser: "
+			document.getElementById("infoIMCIdealMenor").innerHTML= "Para que seu IMC fique com 18.50 (Menor peso aceitável) seu peso deverá ser: "
 			+imcIdealMenor(altura);
-			document.getElementById("infoIMCIdealMaior").innerHTML= "Para que seu IMC fique com 24.99 seu peso deverá ser: "
+			document.getElementById("infoIMCIdealMaior").innerHTML= "Para que seu IMC fique com 24.99 (Maior peso aceitável) seu peso deverá ser: "
 			+imcIdealMaior(altura);;
 			document.getElementById("peso").value = peso;
 			//alert("A conta foi efetuada com sucesso! O resultado é: "+ parseFloat(imc.toFixed(2)));	
@@ -143,8 +155,19 @@
 		return (24.99*(altura*altura)).toFixed(2);
 	}
 
-}
+	}
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+       // Typical action to be performed when the document is ready:
+       document.getElementById("jsonData").innerHTML = xhttp.responseText;
+    }
+	};
+	xhttp.open("GET","dados.txt", true);
+	xhttp.send();
+
 </script>
+<script type="text/javascript" src="dados.txt"></script>
 <script src="js/main.js"></script>
 </body>
 </html>

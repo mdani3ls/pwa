@@ -5,7 +5,7 @@ body {
     
 }
 
-p {
+p, h3 {
     color: rgb(13, 241, 51);
     border: 1px rgb(123, 222, 235);
     border-style: outset;
@@ -18,7 +18,7 @@ p {
     src: url(../DIGI.ttf);
 }
 * {
-    font-size: 16px;
+    font-size: 15px;
     font-family: techno;
     color: rgb(123, 222, 235);
 
@@ -97,7 +97,7 @@ p {
     }
     
     p {
-        color: orange;
+        color: green;
         border: 2px blue;
         border-style: outset;
         margin: 1%;
@@ -111,7 +111,7 @@ p {
     * {
         font-size: 30px;
         font-family: techno;
-        color: orange;
+        color: green;
     
     }
     
@@ -133,11 +133,11 @@ p {
     #foto {
         grid-area: foto;
         border: 1px blue;
-    
+        align-items: center;
         border-style: outset;
         width: auto;
         height: auto;
-        margin: 5px;
+        margin: 5px;        
     }
     
     #um {
