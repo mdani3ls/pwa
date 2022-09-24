@@ -5,7 +5,7 @@ body {
     
 }
 
-p, h3 {
+p {
     color: rgb(13, 241, 51);
     border: 1px rgb(123, 222, 235);
     border-style: outset;
@@ -18,7 +18,7 @@ p, h3 {
     src: url(../DIGI.ttf);
 }
 * {
-    font-size: 15px;
+    font-size: 16px;
     font-family: techno;
     color: rgb(123, 222, 235);
 
@@ -93,29 +93,33 @@ p, h3 {
 @media (max-width: 1000px) {
     body {
         background-image: none  ;
-        background-color: black;        
+        background-color: rgba(0, 1, 2, 0.979);        
     }
     
-    p {
-        color: green;
-        border: 2px blue;
-        border-style: outset;
-        margin: 1%;
-        background-color: black;
-    
-    }
+   h2{
+    color: rgb(23, 8, 240);
+    border: solid 1px white;
+    border-radius: 2 3 4 5;
+    background-color:  rgb(243, 239, 239);
+    opacity: 0.5;
+   }
+
     @font-face{
         font-family: techno;
         src: url(../DIGI.ttf);
     }
     * {
+        
+        border-radius: 5px 10px;
         font-size: 30px;
         font-family: techno;
-        color: green;
+        color: rgb(226, 228, 226);
+        padding: 10px;
     
     }
     
     #principal {
+        
         display: grid;
         width: auto;
         height: auto;
@@ -130,19 +134,12 @@ p, h3 {
         ;
     }
     
-    #foto {
-        grid-area: foto;
-        border: 1px blue;
-        align-items: center;
-        border-style: outset;
-        width: auto;
-        height: auto;
-        margin: 5px;        
-    }
+    
     
     #um {
+        
         grid-area: um;
-        border: solid 1px blue;
+        border: solid 1px rgb(243, 243, 247);
         width: auto;
         height: auto;
         margin: 5px;
@@ -150,7 +147,7 @@ p, h3 {
     
     #dois {
         grid-area: dois;
-        border: solid 1px blue;
+        border: solid 1px rgb(243, 243, 247);
         width: auto;
         height: fit-content;
         margin: 5px;
@@ -158,7 +155,7 @@ p, h3 {
     
     #tres {
         grid-area: tres;
-        border: solid 1px blue;
+        border: solid 1px rgb(243, 243, 247);
         width: auto;
         height: fit-content;
         margin: 5px;
@@ -166,7 +163,7 @@ p, h3 {
     
     #quatro {
         grid-area: quatro;
-        border: solid 1px blue;
+        border: solid 1px rgb(243, 243, 247);
         width: auto;
         height: auto;
         margin: 5px;
@@ -174,7 +171,7 @@ p, h3 {
     
     #cinco {
         grid-area: cinco;
-        border: solid 1px blue;
+        border: solid 1px rgb(243, 243, 247);
         width: auto;
         height: auto;
         margin: 2px;
