@@ -1,5 +1,6 @@
 body {
-    background-image: url(../img/fundos.jpg);
+    /* background-image: url(../img/fundos.jpg); */
+    background-color: black;
     background-repeat: no-repeat;
     background-size: 100% 100%;
     
@@ -18,9 +19,10 @@ p {
     src: url(../DIGI.ttf);
 }
 * {
-    font-size: 16px;
+    padding: 2px;
+    font-size: 20px;
     font-family: techno;
-    color: rgb(123, 222, 235);
+    color: rgb(228, 199, 35);
 
 }
 
@@ -38,7 +40,7 @@ p {
 
 #foto {
     grid-area: foto;
-    border: 2px rgb(123, 222, 235);
+    border: solid 2px rgb(55, 230, 207);
 
     border-style: outset;
     width: auto;
@@ -48,7 +50,7 @@ p {
 
 #um {
     grid-area: um;
-    border: solid 2px rgb(123, 222, 235);
+    border: solid 2px rgb(55, 230, 207);
     width: auto;
     height: auto;
     margin: 5px;
@@ -56,7 +58,7 @@ p {
 
 #dois {
     grid-area: dois;
-    border: solid 2px rgb(123, 222, 235);
+    border: solid 2px rgb(55, 230, 207);
     width: auto;
     height: fit-content;
     margin: 5px;
@@ -64,7 +66,7 @@ p {
 
 #tres {
     grid-area: tres;
-    border: solid 2px rgb(123, 222, 235);
+    border: solid 2px rgb(55, 230, 207);
     width: auto;
     height: fit-content;
     margin: 5px;
@@ -72,7 +74,7 @@ p {
 
 #quatro {
     grid-area: quatro;
-    border: solid 2px rgb(123, 222, 235);
+    border: solid 2px rgb(55, 230, 207);
     width: auto;
     height: auto;
     margin: 5px;
@@ -80,7 +82,7 @@ p {
 
 #cinco {
     grid-area: cinco;
-    border: solid 2px rgb(123, 222, 235);
+    border: solid 2px rgb(55, 230, 207);
     width: auto;
     height: auto;
     margin: 2px;
