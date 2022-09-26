@@ -35,8 +35,8 @@
 		<label  >Altura: </label><input type="number_format" name="altura" id="infoAltura" required readonly>
 		<label  >Peso: </label><input type="number_format" name="peso" id="infoPeso" required readonly>
 		<label  >IMC: </label><input type="number_format" name="imc" id="infoIMC" required >
-		
-		<label style=" color:white">* Observe a tabela no fim da página para saber sua situação. </label>		
+		<label style=" color:white; font-size: 20px;">* Observe a tabela no fim da página para saber sua situação. </label>		
+		<h4 id="imcMenor" style= "color:rgb(8, 121, 12)"></h4>
 		<!-- <label  >Nome: </label><input type="text" name="user" id="infoNome" required> -->
 		<input type="submit" id="salvar" value="Salvar dados com PHP" onclick="salvar();">
 		<input type="submit" id="salvar" value="Salvar dados com NODE js" onclick="salvar();">
@@ -101,9 +101,10 @@
 		alert("Ainda não está pronto a função de salvar :( ");
 	}
 	function salvarAsObject(){
-		var obj = [{nome: document.getElementById("infoNome").value, altura: altura, peso: peso, imc: imc}]
+		var obj = [{altura: altura, peso: peso, imc: imc}]
+		// var obj = [{nome: document.getElementById("infoNome").value, altura: altura, peso: peso, imc: imc}]
 		lista.push(obj)
-		alert('Nome: '+obj[0].nome+'\nAltura: '+obj[0].altura+'\nPeso: '+obj[0].peso+'\nIMC:'+obj[0].imc)
+		alert('Altura: '+obj[0].altura+'\nPeso: '+obj[0].peso+'\nIMC:'+obj[0].imc)
 	}
 	function calcular(){
 
@@ -147,11 +148,13 @@
 	}
 	function imcIdealMenor(altura){
 		altura = altura/100;
-		return (18.50*(altura*altura)).toFixed(2);
+		x = (18.50*(altura*altura)).toFixed(2);
+		// return (18.50*(altura*altura)).toFixed(2);
+		document.getElementById("imcMenor").innerHTML ="Para que seu IMC fique com o menor numero aceitavel seu	peso devera ser: "+ x;
 	}
 	function imcIdealMaior(altura){
 		altura = altura/100;
-		return (24.99*(altura*altura)).toFixed(2);
+		// return (24.99*(altura*altura)).toFixed(2);
 	}
 
 	}

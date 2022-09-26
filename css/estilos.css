@@ -15,6 +15,13 @@
 			background-image: url();
 			background-color: black;
 		}
+		#imcMenor{
+			width: 50%;
+			margin-left: 25%;
+			font-size: 40px;
+			font-family: techno;
+			opacity: 0.3;
+		}
 		input{
 			
 			background-color: rgb(0, 0, 0);
