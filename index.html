@@ -35,8 +35,11 @@
 		<label  >Altura: </label><input type="number_format" name="altura" id="infoAltura" required readonly>
 		<label  >Peso: </label><input type="number_format" name="peso" id="infoPeso" required readonly>
 		<label  >IMC: </label><input type="number_format" name="imc" id="infoIMC" required >
-		<label style=" color:white; font-size: 20px;">* Observe a tabela no fim da página para saber sua situação. </label>		
-		<h4 id="imcMenor" style= "color:rgb(8, 121, 12)"></h4>
+		<label style=" color:rgb(0, 0, 0); font-size: 20px;">* Observe a tabela no fim da página para saber sua situação. </label>		
+		<div id="divImcMenor" >
+		<h5 id="imcMenor"></h5>
+		<h5 id="imcMaior"></h5>
+		</div>
 		<!-- <label  >Nome: </label><input type="text" name="user" id="infoNome" required> -->
 		<input type="submit" id="salvar" value="Salvar dados com PHP" onclick="salvar();">
 		<input type="submit" id="salvar" value="Salvar dados com NODE js" onclick="salvar();">
@@ -155,6 +158,8 @@
 	function imcIdealMaior(altura){
 		altura = altura/100;
 		// return (24.99*(altura*altura)).toFixed(2);
+		x = (24.99*(altura*altura)).toFixed(2);
+		document.getElementById("imcMaior").innerHTML ="Para que seu IMC fique com o maior numero aceitavel seu	peso devera ser: "+ x;
 	}
 
 	}
