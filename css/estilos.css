@@ -25,7 +25,12 @@
 			position: inherit; padding-left: 20px;
 		}
 		#imcMenor{
-			color: rgb(150, 227, 236);
+			color: #fffefe;
+			font-size: 30px;
+			font-family: techno;
+		}
+		#imcMaior{
+			color: rgb(9, 231, 28);
 			font-size: 30px;
 			font-family: techno;
 		}

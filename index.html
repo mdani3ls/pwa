@@ -35,11 +35,12 @@
 		<label  >Altura: </label><input type="number_format" name="altura" id="infoAltura" required readonly>
 		<label  >Peso: </label><input type="number_format" name="peso" id="infoPeso" required readonly>
 		<label  >IMC: </label><input type="number_format" name="imc" id="infoIMC" required >
-		<label style=" color:rgb(0, 0, 0); font-size: 20px;">* Observe a tabela no fim da página para saber sua situação. </label>		
+		<label style=" color:rgb(255, 255, 255); font-size: 15px;">* Observe a tabela no fim da pagina para saber sua situacão. </label>		
 		<div id="divImcMenor" >
 		<h5 id="imcMenor"></h5>
 		<h5 id="imcMaior"></h5>
 		</div>
+		
 		<!-- <label  >Nome: </label><input type="text" name="user" id="infoNome" required> -->
 		<input type="submit" id="salvar" value="Salvar dados com PHP" onclick="salvar();">
 		<input type="submit" id="salvar" value="Salvar dados com NODE js" onclick="salvar();">
@@ -114,7 +115,8 @@
 		peso = document.getElementById("peso").value;
 		altura = document.getElementById("altura").value;
 		imc = peso/(altura*altura)*10000;
-		
+		imcIdealMaior(altura)
+		imcIdealMenor(altura)
 		if(peso<=0 || altura<=0 || peso == isNaN || altura == isNaN) {
 
 			alert ("Peso e Altura com dados inválidos ou não foram inseridos valores!");
@@ -137,12 +139,11 @@
 			document.getElementById("infoAltura").innerHTML = "Altura: "+altura;
 			document.getElementById("infoPeso").innerHTML = "Peso: "+peso;
 			document.getElementById("infoIMC").innerHTML = "IMC: "+(imc.toFixed(2))+"       (Observe a tabela abaixo para comparar seu imc)";	
-			document.getElementById("infoIMCIdealMenor").innerHTML= "Para que seu IMC fique com 18.50 (Menor peso aceitável) seu peso deverá ser: "
-			+imcIdealMenor(altura);
-			document.getElementById("infoIMCIdealMaior").innerHTML= "Para que seu IMC fique com 24.99 (Maior peso aceitável) seu peso deverá ser: "
-			+imcIdealMaior(altura);;
+		
+			//document.getElementById("infoIMCIdealMaior").innerHTML= "Para que seu IMC fique com 24.99 (Maior peso aceitável) seu peso deverá ser: "
+			//+imcIdealMaior(altura);;
 			document.getElementById("peso").value = peso;
-			//alert("A conta foi efetuada com sucesso! O resultado é: "+ parseFloat(imc.toFixed(2)));	
+				
 			
 		}else{
 			alert("Houve algum erro no calculo dos resultados! Observe os dados inseridos e tente novamente :( ")
