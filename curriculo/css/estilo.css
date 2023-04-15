@@ -7,7 +7,7 @@ body {
 }
 
 p {
-    color: rgb(13, 241, 51);
+    color: black;
     border: 1px rgb(123, 222, 235);
     border-style: outset;
     margin: 1%;
@@ -19,11 +19,10 @@ p {
     src: url(../DIGI.ttf);
 }
 * {
-    padding: 2px;
-    font-size: 20px;
+    font-size: 18px;
     font-family: techno;
-    color: rgb(228, 199, 35);
-
+    color: rgb(123, 222, 235);
+    
 }
 
 #principal {
@@ -38,22 +37,14 @@ p {
     ;
 }
 
-#foto {
-    grid-area: foto;
-    border: solid 2px rgb(55, 230, 207);
-
-    border-style: outset;
-    width: auto;
-    height: auto;
-    margin: 5px;
-}
-
 #um {
     grid-area: um;
     border: solid 2px rgb(55, 230, 207);
     width: auto;
     height: auto;
     margin: 5px;
+    padding: 30px;
+    border-radius: 80px 80px;
 }
 
 #dois {
@@ -62,6 +53,8 @@ p {
     width: auto;
     height: fit-content;
     margin: 5px;
+    padding: 30px;
+    border-radius: 80px 80px;
 }
 
 #tres {
@@ -70,6 +63,8 @@ p {
     width: auto;
     height: fit-content;
     margin: 5px;
+    padding: 30px;
+    border-radius: 80px 80px;
 }
 
 #quatro {
@@ -78,6 +73,8 @@ p {
     width: auto;
     height: auto;
     margin: 5px;
+    padding: 30px;
+    border-radius: 80px 80px;
 }
 
 #cinco {
@@ -86,10 +83,10 @@ p {
     width: auto;
     height: auto;
     margin: 2px;
+    padding: 30px;
+    border-radius: 80px 80px;
 }
-#gif{
-    grid-area: terra;
-}
+
 
 /* Caso o dispositivo seja um celular o layout seguirá como abaixo*/
 @media (max-width: 1000px) {
@@ -99,10 +96,10 @@ p {
     }
     
    h2{
-    color: rgb(23, 8, 240);
-    border: solid 1px white;
+    color: rgb(123, 222, 235);
+    border: solid 1px rgb(123, 222, 235);
     border-radius: 2 3 4 5;
-    background-color:  rgb(243, 239, 239);
+    background-color:  black;
     opacity: 0.5;
    }
 
@@ -115,7 +112,7 @@ p {
         border-radius: 5px 10px;
         font-size: 30px;
         font-family: techno;
-        color: rgb(226, 228, 226);
+        color: rgb(123, 222, 235);
         padding: 10px;
     
     }
@@ -141,7 +138,7 @@ p {
     #um {
         
         grid-area: um;
-        border: solid 1px rgb(243, 243, 247);
+        border: solid 1px rgb(123, 222, 235);
         width: auto;
         height: auto;
         margin: 5px;
@@ -149,7 +146,7 @@ p {
     
     #dois {
         grid-area: dois;
-        border: solid 1px rgb(243, 243, 247);
+        border: solid 1px rgb(123, 222, 235);
         width: auto;
         height: fit-content;
         margin: 5px;
@@ -157,7 +154,7 @@ p {
     
     #tres {
         grid-area: tres;
-        border: solid 1px rgb(243, 243, 247);
+        border: solid 1px rgb(123, 222, 235);
         width: auto;
         height: fit-content;
         margin: 5px;
@@ -165,7 +162,7 @@ p {
     
     #quatro {
         grid-area: quatro;
-        border: solid 1px rgb(243, 243, 247);
+        border: solid 1px rgb(123, 222, 235);
         width: auto;
         height: auto;
         margin: 5px;
@@ -173,7 +170,7 @@ p {
     
     #cinco {
         grid-area: cinco;
-        border: solid 1px rgb(243, 243, 247);
+        border: solid 1px rgb(123, 222, 235);
         width: auto;
         height: auto;
         margin: 2px;
